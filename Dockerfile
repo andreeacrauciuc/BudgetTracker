@@ -1,5 +1,7 @@
 FROM maven:3.9-eclipse-temurin-21
 
+ENV MAVEN_OPTS="-Xmx1024m"
+
 WORKDIR /app
 COPY backend ./backend
 COPY frontend ./frontend
