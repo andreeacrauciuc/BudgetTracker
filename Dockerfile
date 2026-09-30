@@ -7,8 +7,8 @@ COPY frontend ./frontend
 RUN cd backend && mvn -B clean install -DskipTests
 
 WORKDIR /app/frontend
-RUN mvn -B compile -DskipTests
+RUN mvn -B -Pproduction clean package -DskipTests
 
 EXPOSE 8080
 
-CMD ["mvn", "jetty:run"]
+CMD ["mvn", "-Pproduction", "jetty:run-war"]
