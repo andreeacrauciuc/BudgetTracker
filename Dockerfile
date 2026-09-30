@@ -16,4 +16,4 @@ COPY --from=build /app/frontend/target/*.war app.war
 ADD https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-runner/11.0.21/jetty-runner-11.0.21.jar jetty-runner.jar
 
 EXPOSE 8080
-CMD ["java", "-jar", "jetty-runner.jar", "--port", "8080", "app.war"]
+CMD ["java", "-jar", "jetty-runner.jar", "--port", "8080", "--path", "/", "app.war"]
